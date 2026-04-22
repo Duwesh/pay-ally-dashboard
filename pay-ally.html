@@ -1002,9 +1002,9 @@ var dataReady=false;
 
 // Inline data generator
 function generateInlineData(){
-  var ents=['SCG International India Pvt Ltd','SCG Building Solutions LLP','SCG Ceramics India Pvt Ltd','SCG Trading India Ltd'];
-  var ecodes=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
-  var offs=['Gurugram','Mumbai','Chennai','Pune','Ahmedabad'];
+  var ents=['Acme International Pvt Ltd','Acme Building Solutions LLP','Acme Ceramics Pvt Ltd','Acme Trading India Ltd'];
+  var ecodes=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
+  var offs=['North Region','West Region','South Region','Central Region','East Region'];
   var depts=['Ceramic Business','Building Solution','Corporate Admin','Sourcing - Ceramics','Logistics','Finance & Accounts','IT & Systems','Sales & Marketing','Human Resources'];
   var users=['Ramesh Kumar','Priya Sharma','Deepika Khatri','Anil Verma','Sunita Patel','Mohan Das','Kiran Mehta','Rahul Gupta','Anita Singh'];
   var vendors=['Acme Logistics','TechServ India','BuildRight Materials','RawCeram Co','Consult Plus','InfoTech Systems','OfficeMax India','Maintech Services','FreightX India','ChemIndia Ltd'];
@@ -1187,7 +1187,7 @@ function bdg(s,lbl){
   return '<span class="bdg '+(map[s]||'bm')+'">'+label+'</span>';
 }
 function sstatus(s){var m={'PENDING_FOR_APPROVAL':'Pending Approval','APPROVED_AND_INVOICE_PENDING':'Approved · Inv Pending','PENDING_FOR_INVOICE_VERIFICATION':'Pending Verification','INVOICE_REJECTED':'Invoice Rejected','DISAPPROVED':'Disapproved','DRAFTED':'Draft','APPROVED':'Approved'};return m[s]||s;}
-function shortEnt(e){return e.replace('SCG International India Pvt Ltd','SCG-INT').replace('SCG Building Solutions LLP','SCG-BS').replace('SCG Ceramics India Pvt Ltd','SCG-CER').replace('SCG Trading India Ltd','SCG-TRD');}
+function shortEnt(e){return e.replace('Acme International Pvt Ltd','ACM-INT').replace('Acme Building Solutions LLP','ACM-BS').replace('Acme Ceramics Pvt Ltd','ACM-CER').replace('Acme Trading India Ltd','ACM-TRD');}
 function shortDept(d){return d.replace('Sourcing - Ceramics','Src-Cer').replace('Finance & Accounts','Finance').replace('Sales & Marketing','Sales').replace('Corporate Admin','Corp Adm').replace('Building Solution','Bldg Sol').replace('Ceramic Business','Ceramics').replace('IT & Systems','IT Sys').replace('Human Resources','HR');}
 function getMonth(s){if(!s||s==='NULL')return '';var d=new Date(s);if(!isNaN(d.getTime()))return d.toLocaleString('en',{month:'short'})+' '+d.getFullYear();var p=s.split('-');if(p.length===3)return p[1]+' '+p[2];return '';}
 function isOverdue(due){return !!(due&&due!=='NULL'&&new Date(due)<DEMO_TODAY);}
@@ -1274,7 +1274,7 @@ var ECY_V={type:'value',axisLine:{show:false},axisTick:{show:false},splitLine:{l
 var spendCtx={month:null,dept:null,entity:null,office:null,cat:null,vendor:null};
 var _deptKeys=[];
 function fSpendCtx(invs){
-  var em={'SCG-INT':'SCG International India Pvt Ltd','SCG-BS':'SCG Building Solutions LLP','SCG-CER':'SCG Ceramics India Pvt Ltd','SCG-TRD':'SCG Trading India Ltd'};
+  var em={'ACM-INT':'Acme International Pvt Ltd','ACM-BS':'Acme Building Solutions LLP','ACM-CER':'Acme Ceramics Pvt Ltd','ACM-TRD':'Acme Trading India Ltd'};
   return invs.filter(function(r){
     if(spendCtx.month&&getMonth(r.date)!==spendCtx.month)return false;
     if(spendCtx.dept&&r.dept!==spendCtx.dept)return false;
@@ -1476,8 +1476,8 @@ function renderOfficeChart(invs){
   var grandTotal=sortedOffs.reduce(function(a,o){return a+offs[o].total;},0);
   var series;
   if(ovMode==='entity'){
-    var eK=['SCG International India Pvt Ltd','SCG Building Solutions LLP','SCG Ceramics India Pvt Ltd','SCG Trading India Ltd'];
-    var eL=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
+    var eK=['Acme International Pvt Ltd','Acme Building Solutions LLP','Acme Ceramics Pvt Ltd','Acme Trading India Ltd'];
+    var eL=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
     series=eK.map(function(ent,i){return{name:eL[i],type:'bar',stack:'s',data:sortedOffs.map(function(o){return offs[o].ents[ent]||0;}),itemStyle:{color:PALETTE[i]},barMaxWidth:24,emphasis:{focus:'series'}};});
   }else if(ovMode==='cat'){
     series=[{name:'OPEX',type:'bar',stack:'s',data:sortedOffs.map(function(o){return offs[o].opex;}),itemStyle:{color:P.green},barMaxWidth:24,emphasis:{focus:'series'}},{name:'CAPEX',type:'bar',stack:'s',data:sortedOffs.map(function(o){return offs[o].capex;}),itemStyle:{color:P.amber},barMaxWidth:24,emphasis:{focus:'series'}}];
@@ -1495,10 +1495,10 @@ function renderOfficeChart(invs){
   });
   if(ec){ec.off('click');ec.on('click',function(p){var o=sortedOffs[p.dataIndex];setSpendCtx('office',spendCtx.office===o?null:o);});}
   var eC=[PALETTE[0],PALETTE[1],PALETTE[2],PALETTE[3]];
-  var eK2=['SCG International India Pvt Ltd','SCG Building Solutions LLP','SCG Ceramics India Pvt Ltd','SCG Trading India Ltd'];
+  var eK2=['Acme International Pvt Ltd','Acme Building Solutions LLP','Acme Ceramics Pvt Ltd','Acme Trading India Ltd'];
   if(sumEl)sumEl.innerHTML='<div style="font-size:9px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:7px">Location · Entity Concentration</div>'+sortedOffs.map(function(o,idx){
     var oi=offs[o],totPct=pct(oi.total,grandTotal);
-    var segs=eK2.map(function(ent,i){var v=oi.ents[ent]||0,w=oi.total>0?Math.round(v/oi.total*100):0;return w>0?'<div class="off-seg" style="width:'+w+'%;background:'+eC[i]+'" title="'+ent+': '+fmt(v)+'">'+('SCG-INT,SCG-BS,SCG-CER,SCG-TRD'.split(',')[i])+'</div>':''}).join('');
+    var segs=eK2.map(function(ent,i){var v=oi.ents[ent]||0,w=oi.total>0?Math.round(v/oi.total*100):0;return w>0?'<div class="off-seg" style="width:'+w+'%;background:'+eC[i]+'" title="'+ent+': '+fmt(v)+'">'+('ACM-INT,ACM-BS,ACM-CER,ACM-TRD'.split(',')[i])+'</div>':''}).join('');
     return '<div class="off-row"><span class="off-rank">'+(idx+1)+'</span><span class="off-name">'+o+'</span><div class="off-segments">'+segs+'</div><span class="off-total num">'+fmt(oi.total)+'</span><span class="off-pct">'+totPct+'%</span></div>';
   }).join('');
 }
@@ -1548,8 +1548,8 @@ function renderTypeStack(invs){
 }
 
 function renderEntityTrend(invs){
-  var entFull=['SCG International India Pvt Ltd','SCG Building Solutions LLP','SCG Ceramics India Pvt Ltd','SCG Trading India Ltd'];
-  var entKeys=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
+  var entFull=['Acme International Pvt Ltd','Acme Building Solutions LLP','Acme Ceramics Pvt Ltd','Acme Trading India Ltd'];
+  var entKeys=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
   var ec=mkEChart('chartEntityTrend',{
     animation:true,animationDuration:600,
     tooltip:Object.assign({},ECT,{trigger:'axis',axisPointer:{type:'shadow'},formatter:function(params){var h='<div style="font-weight:700;color:#F1F5F9;margin-bottom:5px">'+params[0].axisValue+'</div>';params.forEach(function(p){h+='<div style="margin:2px 0">'+p.marker+'<span style="color:#CBD5E1">'+p.seriesName+':</span> <span style="font-family:JetBrains Mono;color:#F1F5F9;font-weight:600">'+fmt(p.value)+'</span></div>';});h+='<div style="color:#64748B;font-size:9.5px;margin-top:4px;border-top:1px solid rgba(255,255,255,0.08);padding-top:3px">Click series to filter by entity</div>';return h;}}),
@@ -1605,8 +1605,8 @@ function buildSpendTable(invs){
 function renderPurch(){
   var pos=fPO(D.po);
   var today=DEMO_TODAY;
-  var entKeys=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
-  var entFull=['SCG International India Pvt Ltd','SCG Building Solutions LLP','SCG Ceramics India Pvt Ltd','SCG Trading India Ltd'];
+  var entKeys=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
+  var entFull=['Acme International Pvt Ltd','Acme Building Solutions LLP','Acme Ceramics Pvt Ltd','Acme Trading India Ltd'];
 
   // § 1 — Operational KPIs
   var prPending=D.pr.filter(function(r){return r.status==='PENDING_APPROVAL'||r.status==='DRAFTED';}).length;
@@ -2004,7 +2004,7 @@ function _renderAPAging(allPays){
   });
   // Wire click → drilldown PO/Non-PO + filter table
   if(ec){ec.off('click');ec.on('click',function(p){if(p.componentType==='series'&&p.seriesIndex===0)_drillAgingBucket(p.dataIndex);});}
-  var entKeys=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
+  var entKeys=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
   mkEChart('chartAgingStacked',{animation:true,animationDuration:700,
     tooltip:Object.assign({},ECT,{trigger:'axis',axisPointer:{type:'shadow'},formatter:function(params){var h='<div style="font-weight:700;color:#F1F5F9;margin-bottom:5px">'+params[0].axisValue+'</div>';params.forEach(function(p){if(p.value>0)h+='<div style="margin:2px 0">'+p.marker+'<span style="color:#CBD5E1">'+p.seriesName+':</span> <span style="font-family:JetBrains Mono;color:#F1F5F9;font-weight:600">'+fmt(p.value)+'</span></div>';});return h;}}),
     legend:{bottom:0,textStyle:{color:'#64748B',fontFamily:'Inter',fontSize:9.5},itemHeight:8},
@@ -2131,8 +2131,8 @@ function _renderAPUpcoming(allPays){
   var today=DEMO_TODAY;
   function cutoff(days){var d=new Date(today);d.setDate(d.getDate()+days);return d;}
   var d7=cutoff(7),d15=cutoff(15),d30=cutoff(30);
-  var entFull=['SCG International India Pvt Ltd','SCG Building Solutions LLP','SCG Ceramics India Pvt Ltd','SCG Trading India Ltd'];
-  var entKeys=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
+  var entFull=['Acme International Pvt Ltd','Acme Building Solutions LLP','Acme Ceramics Pvt Ltd','Acme Trading India Ltd'];
+  var entKeys=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
   var open=allPays.filter(function(r){return r.remaining>0;});
 
   // Segment invoices into 4 urgency windows (mutually exclusive buckets)
@@ -2211,8 +2211,8 @@ function _renderAPUpcoming(allPays){
 
 // ─── §6 Advances ──────────────────────────────────────────
 function _renderAPAdvances(poPays,npoPays){
-  var entKeys=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
-  var entFull=['SCG International India Pvt Ltd','SCG Building Solutions LLP','SCG Ceramics India Pvt Ltd','SCG Trading India Ltd'];
+  var entKeys=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
+  var entFull=['Acme International Pvt Ltd','Acme Building Solutions LLP','Acme Ceramics Pvt Ltd','Acme Trading India Ltd'];
   var poAdv=entFull.map(function(e){return poPays.filter(function(r){return r.entity===e;}).reduce(function(a,r){return a+Math.round(r.total_payable*.25);},0);});
   var npoAdv=entFull.map(function(e){return D.npo_advances.filter(function(r){return r.entity===e;}).reduce(function(a,r){return a+r.advance_amount;},0);});
   var npoAdj=entFull.map(function(e){return D.npo_advances.filter(function(r){return r.entity===e;}).reduce(function(a,r){return a+r.adjusted_amount;},0);});
@@ -2422,8 +2422,8 @@ function _renderAPFlags(allPays){
 var ageBucketFilter=-1;
 var _apLastPays=[];
 var apCtx={entity:null,type:null,payStatus:null};
-var _apEntFull=['SCG International India Pvt Ltd','SCG Building Solutions LLP','SCG Ceramics India Pvt Ltd','SCG Trading India Ltd'];
-var _apEntKeys=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
+var _apEntFull=['Acme International Pvt Ltd','Acme Building Solutions LLP','Acme Ceramics Pvt Ltd','Acme Trading India Ltd'];
+var _apEntKeys=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
 function fApCtx(pays){
   return pays.filter(function(r){
     if(apCtx.entity&&r.entity!==_apEntFull[_apEntKeys.indexOf(apCtx.entity)])return false;
@@ -2519,7 +2519,7 @@ function _getInvStatus(r){var s=r.payment_status||'Open';if(isOverdue(r.due_date
 
 function _drillInvByStatus(statusLabel){
   var P2=_apLastPays;
-  var ents=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
+  var ents=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
   var poC=ents.map(function(e){return P2.filter(function(r){return r.type==='PO'&&shortEnt(r.entity)===e&&_getInvStatus(r)===statusLabel;}).length;});
   var npoC=ents.map(function(e){return P2.filter(function(r){return r.type!=='PO'&&shortEnt(r.entity)===e&&_getInvStatus(r)===statusLabel;}).length;});
   _setText('ibs-title','Invoice Count — '+statusLabel);
@@ -2543,7 +2543,7 @@ function _drillInvByStatus(statusLabel){
 
 function _drillPayStatus(statusLabel){
   var P2=_apLastPays;
-  var ents=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
+  var ents=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
   var poA=ents.map(function(e){return P2.filter(function(r){return r.type==='PO'&&shortEnt(r.entity)===e&&(r.payment_status||'Open')===statusLabel;}).reduce(function(a,r){return a+r.total_payable;},0);});
   var npoA=ents.map(function(e){return P2.filter(function(r){return r.type!=='PO'&&shortEnt(r.entity)===e&&(r.payment_status||'Open')===statusLabel;}).reduce(function(a,r){return a+r.total_payable;},0);});
   _setText('ps-title','Payment Status — '+statusLabel);
@@ -2570,7 +2570,7 @@ function _drillAgingBucket(bi){
   var BN=['Not Due','1–30 Days','31–60 Days','61–90 Days','90+ Days'];
   var tc=[P.green,P.amber,'#EA580C',P.red,'#991B1B'];
   var today=DEMO_TODAY;
-  var ents=['SCG-INT','SCG-BS','SCG-CER','SCG-TRD'];
+  var ents=['ACM-INT','ACM-BS','ACM-CER','ACM-TRD'];
   var bucketPays=P2.filter(function(r){
     if(!r.due_date||r.remaining<=0)return bi===0;
     var diff=Math.round((today-new Date(r.due_date))/86400000);
