@@ -87,9 +87,7 @@ button,select,input{font-family:var(--fb);cursor:pointer;outline:none}
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   box-shadow:0 1px 3px rgba(0,0,0,0.06),0 2px 12px rgba(0,0,0,0.04);
 }
-.brand-text{font-size:14px;font-weight:700;color:var(--t1);letter-spacing:-.4px;flex-shrink:0;white-space:nowrap;
-  background:var(--grad-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-}
+.brand-logo{height:26px;width:auto;display:block;flex-shrink:0}
 .topbar-sep{width:1px;height:18px;background:var(--bd);flex-shrink:0;margin:0 4px}
 
 /* FILTERS */
@@ -485,6 +483,50 @@ button,select,input{font-family:var(--fb);cursor:pointer;outline:none}
 .upc-val{font-family:var(--fm);font-variant-numeric:tabular-nums;font-size:17px;font-weight:700;letter-spacing:-.3px;line-height:1.15;margin-bottom:3px}
 .upc-sub{font-size:10px;color:var(--t3)}
 .ap-kpi8{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px}
+/* TAT ANALYSIS */
+.tat-hero{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;padding:8px 2px 2px}
+.tat-kicker{font-size:10px;font-weight:750;color:var(--c1);text-transform:uppercase;letter-spacing:.9px;margin-bottom:3px}
+.tat-h1{font-size:22px;line-height:1.12;font-weight:800;color:var(--t1);letter-spacing:-.55px}
+.tat-hcopy{font-size:11.5px;color:var(--t3);max-width:720px;margin-top:4px}
+.tat-hero-meta{display:grid;grid-template-columns:repeat(3,minmax(86px,1fr));gap:8px;min-width:330px}
+.tat-meta{background:rgba(255,255,255,.68);border:1px solid var(--bd);border-radius:8px;padding:8px 10px}
+.tat-meta-l{font-size:8.5px;font-weight:750;text-transform:uppercase;letter-spacing:.65px;color:var(--t3)}
+.tat-meta-v{font-family:var(--fm);font-size:13px;font-weight:800;color:var(--t1);margin-top:2px}
+.tat-score{display:grid;grid-template-columns:1.25fr repeat(3,minmax(0,1fr));gap:10px}
+.tat-card{min-height:118px;padding:16px 16px 14px;display:flex;flex-direction:column;justify-content:space-between;border-radius:10px}
+.tat-card.primary{min-height:132px;background:linear-gradient(180deg,#FFFFFF 0%,rgba(240,253,250,.72) 100%)}
+.tat-card::before{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--tat-accent,var(--c1))}
+.tat-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.tat-value{font-size:23px;font-weight:800;color:var(--t1);font-family:var(--fm);line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tat-card.primary .tat-value{font-size:31px}
+.tat-unit{font-size:9px;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.65px}
+.tat-label{font-size:10.5px;color:var(--t2);font-weight:500}
+.tat-sub{font-size:10px;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tat-chip{font-size:10px;font-weight:700;border-radius:5px;padding:2px 6px;background:var(--s1);color:var(--t3);border:1px solid var(--bd);white-space:nowrap}
+.tat-chip.good{background:var(--c5a);border-color:var(--c5b);color:var(--c5)}
+.tat-chip.warn{background:var(--c3a);border-color:var(--c3b);color:var(--c3)}
+.tat-chip.risk{background:var(--c4a);border-color:var(--c4b);color:var(--c4)}
+.tat-note-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:12px}
+.tat-insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.tat-insight{background:rgba(248,250,252,.72);border:1px solid var(--bd);border-radius:8px;padding:10px 11px;min-width:0}
+.tat-insight-label{font-size:9px;font-weight:700;color:var(--t3);letter-spacing:.55px;text-transform:uppercase;margin-bottom:4px}
+.tat-insight-value{font-family:var(--fm);font-size:16px;font-weight:800;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tat-insight-copy{font-size:10px;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tat-brief{display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#FFFFFF 0%,rgba(248,250,252,.9) 100%)}
+.tat-brief-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--bd);padding-bottom:8px;min-height:32px}
+.tat-brief-row:last-child{border-bottom:none;padding-bottom:0}
+.tat-brief-l{font-size:10.5px;color:var(--t2);font-weight:600}
+.tat-brief-r{font-family:var(--fm);font-size:12px;color:var(--t1);font-weight:700;text-align:right;overflow-wrap:anywhere}
+.tat-chart{height:260px;width:100%}
+.tat-chart.tall{height:286px}
+.tat-chart.compact{height:236px}
+.tat-panel-title{display:flex;align-items:center;gap:8px}
+.tat-panel-title::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--c1);box-shadow:0 0 0 3px var(--c1a)}
+.tat-muted-action{opacity:.72}
+.tat-muted-action:hover{opacity:1}
+@media(max-width:1200px){.tat-score{grid-template-columns:repeat(2,minmax(0,1fr))}.tat-hero{align-items:flex-start;flex-direction:column}.tat-hero-meta{width:100%;min-width:0}}
+@media(max-width:1100px){.tat-note-grid{grid-template-columns:1fr}.tat-insights{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.tat-score,.tat-insights,.tat-hero-meta{grid-template-columns:1fr}.tat-h1{font-size:19px}}
 /* RESPONSIVE */
 @media(max-width:1200px){.kpi-val{font-size:17px}.ap-kpi8{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:1100px){.g5{grid-template-columns:repeat(3,minmax(0,1fr))}.aging-buckets{grid-template-columns:repeat(3,1fr)}.dept-scorecard{grid-template-columns:repeat(2,1fr)}.ap-kpi8{grid-template-columns:repeat(4,minmax(0,1fr))}}
@@ -497,7 +539,7 @@ button,select,input{font-family:var(--fb);cursor:pointer;outline:none}
 
 <!-- TOP BAR -->
 <header class="topbar">
-  <span class="brand-text">Pay-Ally</span>
+  <img src="public/PV_Logo.png" alt="Pay-Ally" class="brand-logo">
   <div class="topbar-sep"></div>
   <div class="filters">
     <select class="fsel" id="fPeriod" onchange="applyFilters()">
@@ -533,6 +575,7 @@ button,select,input{font-family:var(--fb);cursor:pointer;outline:none}
   <div class="tab active" onclick="switchTab(0,this)">Spend Analytics <span class="tbadge tb-t" id="badge0">—</span></div>
   <div class="tab" onclick="switchTab(1,this)">Purchasing <span class="tbadge tb-a" id="badge1">—</span></div>
   <div class="tab" onclick="switchTab(2,this)">Accounts Payable <span class="tbadge tb-r" id="badge2">—</span></div>
+  <div class="tab" onclick="switchTab(3,this)">TAT Analysis <span class="tbadge tb-t" id="badge3">-</span></div>
 </nav>
 
 <main class="content">
@@ -896,6 +939,134 @@ button,select,input{font-family:var(--fb);cursor:pointer;outline:none}
   </div>
 </div>
 
+<!-- TAT ANALYSIS -->
+<div class="panel" id="pTAT">
+  <section class="tat-hero">
+    <div>
+      <div class="tat-kicker">Pay-Ally P2P Analytics</div>
+      <h1 class="tat-h1">TAT Analysis</h1>
+      <p class="tat-hcopy">Track Pay-Ally approval TAT across Purchase Request, Quotation, Purchase Order and Invoice approval modules.</p>
+    </div>
+    <div class="tat-hero-meta">
+      <div class="tat-meta"><div class="tat-meta-l">TAT Limit</div><div class="tat-meta-v">30d</div></div>
+      <div class="tat-meta"><div class="tat-meta-l">Scope</div><div class="tat-meta-v" id="tat-scope">All</div></div>
+      <div class="tat-meta"><div class="tat-meta-l">Data View</div><div class="tat-meta-v">Inline</div></div>
+    </div>
+  </section>
+
+  <div class="tat-score">
+    <div class="card tat-card primary" style="--tat-accent:var(--c1)">
+      <div class="tat-top"><div><div class="tat-unit">End-to-end cycle</div><div class="tat-value num" id="tat-e2e">-</div></div><span class="tat-chip" id="tat-e2e-chip">TAT</span></div>
+      <div><div class="tat-label">PR creation to payment</div><div class="tat-sub" id="tat-e2e-sub">Weighted by PO value</div></div>
+    </div>
+    <div class="card tat-card" style="--tat-accent:var(--c4)">
+      <div class="tat-top"><div><div class="tat-unit">Value delayed</div><div class="tat-value num" id="tat-delay-value">-</div></div><span class="tat-chip risk" id="tat-delay-chip">Status</span></div>
+      <div><div class="tat-label">Open value in cycles above TAT limit</div><div class="tat-sub" id="tat-delay-sub">Delayed PO value</div></div>
+    </div>
+    <div class="card tat-card" style="--tat-accent:var(--c3)">
+      <div class="tat-top"><div><div class="tat-unit">TAT breach rate</div><div class="tat-value num" id="tat-breach-rate">-</div></div><span class="tat-chip warn" id="tat-breach-chip">Watch</span></div>
+      <div><div class="tat-label">POs above 30 day limit</div><div class="tat-sub" id="tat-breach-sub">Critical TAT cycles</div></div>
+    </div>
+    <div class="card tat-card" style="--tat-accent:var(--c6)">
+      <div class="tat-top"><div><div class="tat-unit">Largest bottleneck</div><div class="tat-value num" id="tat-bottleneck">-</div></div><span class="tat-chip" id="tat-bottleneck-chip">Stage</span></div>
+      <div><div class="tat-label" id="tat-bottleneck-label">Stage causing most cycle time</div><div class="tat-sub" id="tat-bottleneck-sub">Avg days by stage</div></div>
+    </div>
+  </div>
+
+  <div class="tat-note-grid">
+    <div class="card">
+      <div class="ch"><div class="ch-l"><div class="ch-title">Pay-Ally TAT Summary</div><div class="ch-sub">Cycle status, delayed PO value and bottleneck signals from the TAT module</div></div></div>
+      <div class="tat-insights">
+        <div class="tat-insight"><div class="tat-insight-label">Delayed PO value</div><div class="tat-insight-value num" id="tat-cash-drag">-</div><div class="tat-insight-copy" id="tat-cash-copy">Value above TAT limit</div></div>
+        <div class="tat-insight"><div class="tat-insight-label">Delayed vendors</div><div class="tat-insight-value num" id="tat-risk-vendors">-</div><div class="tat-insight-copy" id="tat-vendor-copy">Vendors above TAT limit</div></div>
+        <div class="tat-insight"><div class="tat-insight-label">Critical POs</div><div class="tat-insight-value num" id="tat-critical-pos">-</div><div class="tat-insight-copy" id="tat-critical-copy">Need escalation</div></div>
+      </div>
+    </div>
+    <div class="card tat-brief">
+      <div class="tat-brief-row"><span class="tat-brief-l">Pay-Ally action</span><span class="tat-brief-r" id="tat-action">-</span></div>
+      <div class="tat-brief-row"><span class="tat-brief-l">Most exposed entity</span><span class="tat-brief-r" id="tat-exposed-entity">-</span></div>
+      <div class="tat-brief-row"><span class="tat-brief-l">Fastest control lever</span><span class="tat-brief-r" id="tat-lever">-</span></div>
+    </div>
+  </div>
+
+  <div class="g31">
+    <div class="card">
+      <div class="ch">
+        <div class="ch-l"><div class="ch-title tat-panel-title">Approval Stage Bottleneck vs TAT Limit</div><div class="ch-sub">Average and worst-case days across Pay-Ally approval modules</div></div>
+        <div class="ch-r">
+          <button class="segbtn on" onclick="setPipelineView('avg', this)">Average</button>
+          <button class="segbtn" onclick="setPipelineView('max', this)">Max</button>
+          <button class="action-btn-sm tat-muted-action" title="Detailed Analysis" onclick="analyzeTAT('pipeline')"><svg viewBox="0 0 16 16" style="width:14px;height:14px"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zM8 4v4h3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        </div>
+      </div>
+      <div id="chartTATPipeline" class="tat-chart"></div>
+    </div>
+    <div class="card">
+      <div class="ch">
+        <div class="ch-l"><div class="ch-title tat-panel-title">Approval TAT & Delayed PO Value Trend</div><div class="ch-sub">Monthly approval cycle days with PO value above TAT limit</div></div>
+        <div class="ch-r"><button class="action-btn-sm tat-muted-action" title="Analyze Outliers" onclick="analyzeTAT('outliers')"><svg viewBox="0 0 16 16" style="width:14px;height:14px"><path d="M2 13h12M4 10l3-4 3 3 4-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+      </div>
+      <div id="chartTATTrend" class="tat-chart"></div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ch">
+        <div class="ch-l"><div class="ch-title tat-panel-title">Department Approval TAT View</div><div class="ch-sub">Departments ranked by PR approval delay or total Pay-Ally cycle time</div></div>
+        <div class="ch-r"><button class="segbtn on" onclick="setDeptTATView('prApproval', this)">PR Approval</button><button class="segbtn" onclick="setDeptTATView('total', this)">Total</button></div>
+      </div>
+      <div id="chartDeptTAT" class="tat-chart tall"></div>
+    </div>
+    <div class="card">
+      <div class="ch">
+        <div class="ch-l"><div class="ch-title tat-panel-title">Vendor Approval TAT View</div><div class="ch-sub">Vendor-linked quotation and invoice approval TAT with delayed PO value</div></div>
+        <div class="ch-r"><button class="action-btn-sm tat-muted-action" title="Vendor Reliability Report" onclick="analyzeTAT('vendors')"><svg viewBox="0 0 16 16" style="width:14px;height:14px"><path d="M2 2h12v12H2V2zm3 3h6v1H5V5zm0 3h6v1H5V8zm0 3h3v1H5v-1z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+      </div>
+      <div id="chartVendorTAT" class="tat-chart tall"></div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ch">
+        <div class="ch-l"><div class="ch-title tat-panel-title">TAT Distribution</div><div class="ch-sub">PO cycle concentration across on-time, delayed and critical bands</div></div>
+        <div class="ch-r"><div class="chart-toggle-group"><button class="ctgl on" onclick="setDistView('count', this)">Count</button><button class="ctgl" onclick="setDistView('percent', this)">%</button><button class="ctgl" onclick="setDistView('value', this)">Value</button></div></div>
+      </div>
+      <div id="chartTATDist" class="tat-chart compact"></div>
+    </div>
+    <div class="card">
+      <div class="ch"><div class="ch-l"><div class="ch-title tat-panel-title">Entity TAT Matrix</div><div class="ch-sub">Delayed PO value and TAT breach rate by entity</div></div></div>
+      <div id="chartTATCash" class="tat-chart compact"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tbar">
+      <div class="tbar-l">
+        <span class="tbar-title">TAT Bottleneck Register</span>
+        <div class="frow">
+          <button class="fbtn on" id="tf-all" onclick="filterTAT('all',this)">All</button>
+          <button class="fbtn" id="tf-critical" onclick="filterTAT('critical',this)" style="border-color:var(--c4a);color:var(--c4)">Critical (&gt; 30d)</button>
+          <button class="fbtn" id="tf-delayed" onclick="filterTAT('delayed',this)" style="border-color:var(--c3a);color:var(--c3)">Delayed (15-30d)</button>
+          <button class="fbtn" id="tf-highvalue" onclick="filterTAT('highvalue',this)" style="border-color:var(--c6a);color:var(--c6)">High Value</button>
+        </div>
+      </div>
+      <div class="tbar-r">
+        <div class="tsf"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4"/><path d="M11 11l3 3"/></svg><input class="tinp" placeholder="Search POs/Invoices..." oninput="tblSearch(this,'tat-dt','tat-cnt','tat-pg')"></div>
+        <span class="rcnt" id="tat-cnt"></span>
+      </div>
+    </div>
+    <div class="twrap">
+      <table class="tbl">
+        <thead><tr><th>ID</th><th>Entity</th><th>Department</th><th>Vendor</th><th>PO Value</th><th>PR Approval</th><th>Quotation Approval</th><th>PO Approval</th><th>Invoice Approval</th><th>Total TAT</th><th>Bottleneck</th><th>Status</th></tr></thead>
+        <tbody id="tat-dt"></tbody>
+      </table>
+    </div>
+    <div class="pg-bar" id="tat-pg"></div>
+  </div>
+</div>
+
 </main>
 
 <!-- DRAWER -->
@@ -1219,7 +1390,7 @@ function pgRender(tbId,cntId,pgId){
 }
 function pgB(l,t,c,p,pg,d){return '<button class="pg-btn" onclick="pgGo(\''+t+'\',\''+c+'\',\''+p+'\','+pg+')"'+(d?' disabled':'')+'>'+l+'</button>';}
 function pgGo(tbId,cntId,pgId,page){PG_PAGE[tbId]=page;pgRender(tbId,cntId,pgId);}
-function tblSearch(inp,tbId,cntId){var pgId=tbId==='spend-dt'?'spend-pg':tbId==='po-dt'?'po-pg':'ap-pg';PG_Q[tbId]=inp.value;PG_PAGE[tbId]=1;pgRender(tbId,cntId,pgId);}
+function tblSearch(inp,tbId,cntId,pgId){pgId=pgId||(tbId==='spend-dt'?'spend-pg':tbId==='po-dt'?'po-pg':tbId==='tat-dt'?'tat-pg':'ap-pg');PG_Q[tbId]=typeof inp==='string'?inp:inp.value;PG_PAGE[tbId]=1;pgRender(tbId,cntId,pgId);}
 
 // ══════════════════════════════════════
 // FILTER STATE
@@ -2888,6 +3059,66 @@ function exportData(){
 }
 
 // ══════════════════════════════════════
+// TAT ANALYSIS
+var TAT=(function(){
+  var SLA={prApproval:5,quoteApproval:4,poApproval:3,invoiceApproval:7,total:30};
+  var STAGES=[{key:'prApproval',label:'PR Approval',sla:SLA.prApproval,color:P.teal},{key:'quoteApproval',label:'Quotation Approval',sla:SLA.quoteApproval,color:P.blue},{key:'poApproval',label:'PO Approval',sla:SLA.poApproval,color:P.amber},{key:'invoiceApproval',label:'Invoice Approval',sla:SLA.invoiceApproval,color:P.indigo}];
+  var state={records:[],filtered:[],metrics:{},filter:'all',pipelineView:'avg',deptView:'prApproval',distView:'count'};
+  function hash(s){var h=0;s=String(s||'');for(var i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i);return Math.abs(h);}
+  function avg(arr,key){return arr.length?arr.reduce(function(a,r){return a+Number(r[key]||0);},0)/arr.length:0;}
+  function sum(arr,key){return arr.reduce(function(a,r){return a+Number(r[key]||0);},0);}
+  function groupBy(arr,key){var out={};arr.forEach(function(r){var k=typeof key==='function'?key(r):r[key];if(!out[k])out[k]=[];out[k].push(r);});return out;}
+  function weightedAvg(arr,key,weightKey){var w=sum(arr,weightKey);return w?arr.reduce(function(a,r){return a+Number(r[key]||0)*Number(r[weightKey]||0);},0)/w:avg(arr,key);}
+  function fmtDays(n){return Math.round(n||0)+'d';}
+  function riskBadge(status){if(status==='critical')return '<span class="bdg br">Critical</span>';if(status==='delayed')return '<span class="bdg ba">Delayed</span>';return '<span class="bdg bg">On-Time</span>';}
+  function bestStage(r){return STAGES.map(function(s){return{key:s.key,label:s.label,days:r[s.key],over:Math.max(0,r[s.key]-s.sla)};}).sort(function(a,b){return(b.over-a.over)||(b.days-a.days);})[0];}
+  function setText(id,value){var el=document.getElementById(id);if(el)el.textContent=value;}
+  function setChip(id,label,cls){var el=document.getElementById(id);if(!el)return;el.textContent=label;el.className='tat-chip'+(cls?' '+cls:'');}
+  function processData(){
+    state.records=(D.po||[]).map(function(po,idx){
+      var seed=hash(po.po_number+po.vendor+po.dept);
+      var prApproval=2+(seed%7),quoteApproval=po.created_via==='DIRECT'?0:1+((seed>>2)%7),poApproval=1+((seed>>3)%5);
+      var invoiceApproval=po.inv_total>0?3+((seed>>4)%10):5+((seed>>5)%12);
+      var grnSrn=po.status==='Open'||po.grn_status==='GRN Pending'?8+(seed%18):3+((seed>>6)%9);
+      var paymentCycle=po.inv_total>0?4+((seed>>7)%14):0;if(po.remaining_amount>0)paymentCycle+=3+((seed>>8)%8);
+      var total=prApproval+quoteApproval+poApproval+grnSrn+invoiceApproval+paymentCycle,delayed=total>SLA.total,openValue=Math.max(0,Number(po.remaining_amount||0));
+      var delayedValue=delayed?Math.max(openValue,Math.round(Number(po.total_price||0)*.35)):0,b=bestStage({prApproval:prApproval,quoteApproval:quoteApproval,poApproval:poApproval,invoiceApproval:invoiceApproval});
+      return{id:po.po_number,entity:po.entity,dept:po.dept,office:po.office,vendor:po.vendor,month:getMonth(po.created_on)||MONTHS[idx%MONTHS.length],value:Number(po.total_price||0),delayedValue:delayedValue,prApproval:prApproval,quoteApproval:quoteApproval,poApproval:poApproval,grnSrn:grnSrn,invoiceApproval:invoiceApproval,paymentCycle:paymentCycle,total:total,bottleneck:b.label,status:total>SLA.total?'critical':total>15?'delayed':'on-time'};
+    });
+    state.filtered=state.records.filter(function(r){return(F.period==='all'||r.month===F.period)&&(F.entity==='all'||r.entity===F.entity)&&(F.dept==='all'||r.dept===F.dept)&&(F.office==='all'||r.office===F.office)&&(F.vendor==='all'||r.vendor===F.vendor);});
+    computeMetrics();
+  }
+  function computeMetrics(){
+    var recs=state.filtered,delayed=recs.filter(function(r){return r.total>SLA.total;}),stages=STAGES.map(function(s){return{key:s.key,label:s.label,avg:avg(recs,s.key),max:recs.length?Math.max.apply(null,recs.map(function(r){return r[s.key];})):0,over:Math.max(0,avg(recs,s.key)-s.sla),sla:s.sla};});
+    var entityGroups=groupBy(delayed,'entity');
+    state.metrics={count:recs.length,avgTotal:weightedAvg(recs,'total','value'),totalValue:sum(recs,'value'),delayedValue:sum(delayed,'delayedValue'),breachRate:pct(delayed.length,recs.length),criticalCount:delayed.length,delayedCount:delayed.length,vendorRiskCount:Object.keys(groupBy(delayed,'vendor')).length,bottleneck:stages.sort(function(a,b){return(b.over-a.over)||(b.avg-a.avg);})[0],entityExposure:Object.keys(entityGroups).map(function(k){return{name:k,value:sum(entityGroups[k],'delayedValue')};}).sort(function(a,b){return b.value-a.value;})[0]};
+  }
+  function renderKPIs(){
+    var m=state.metrics,avgTotal=Math.round(m.avgTotal||0),scope=[F.period!=='all'?F.period:null,F.entity!=='all'?shortEnt(F.entity):null,F.dept!=='all'?shortDept(F.dept):null,F.vendor!=='all'?F.vendor:null].filter(Boolean).join(' / ')||'All';
+    setText('tat-scope',scope);setText('tat-e2e',fmtDays(avgTotal));setText('tat-e2e-sub',m.count+' PO cycles analyzed');setChip('tat-e2e-chip',avgTotal<=SLA.total?'On target':'+'+(avgTotal-SLA.total)+'d',avgTotal<=SLA.total?'good':'warn');
+    setText('tat-delay-value',fmt(m.delayedValue||0));setText('tat-delay-sub',pct(m.delayedValue,m.totalValue)+'% of PO value under delay');setChip('tat-delay-chip',m.delayedValue?'Delayed':'Clear',m.delayedValue?'risk':'good');
+    setText('tat-breach-rate',(m.breachRate||0)+'%');setText('tat-breach-sub',(m.delayedCount||0)+' of '+(m.count||0)+' POs breached');setChip('tat-breach-chip',m.breachRate>25?'High':m.breachRate>10?'Watch':'Good',m.breachRate>25?'risk':m.breachRate>10?'warn':'good');
+    setText('tat-bottleneck',m.bottleneck?fmtDays(m.bottleneck.avg):'-');setText('tat-bottleneck-label',m.bottleneck?m.bottleneck.label:'Stage causing most cycle time');setText('tat-bottleneck-sub',m.bottleneck?'Limit '+m.bottleneck.sla+'d; worst '+fmtDays(m.bottleneck.max):'Avg days by stage');setChip('tat-bottleneck-chip',m.bottleneck&&m.bottleneck.over>0?'+'+Math.round(m.bottleneck.over)+'d':'Within SLA',m.bottleneck&&m.bottleneck.over>0?'warn':'good');
+    setText('tat-cash-drag',fmt(m.delayedValue||0));setText('tat-cash-copy','Against '+fmt(m.totalValue||0)+' PO base');setText('tat-risk-vendors',String(m.vendorRiskCount||0));setText('tat-vendor-copy','Linked to critical TAT cycles');setText('tat-critical-pos',String(m.criticalCount||0));setText('tat-critical-copy','Above '+SLA.total+' day TAT limit');setText('tat-action',m.bottleneck?'Fix '+m.bottleneck.label:'-');setText('tat-exposed-entity',m.entityExposure?shortEnt(m.entityExposure.name)+' / '+fmt(m.entityExposure.value):'-');setText('tat-lever',m.bottleneck&&m.bottleneck.key==='quoteApproval'?'Quotation approval follow-up':m.bottleneck&&m.bottleneck.key==='invoiceApproval'?'Invoice approval review':'Approval flow review');
+    var badge=document.getElementById('badge3');if(badge)badge.textContent=fmtDays(avgTotal)+' Avg';
+  }
+  function renderPipeline(){var recs=state.filtered,values=STAGES.map(function(s){var v=state.pipelineView==='max'?(recs.length?Math.max.apply(null,recs.map(function(r){return r[s.key];})):0):avg(recs,s.key);return Math.round(v||0);});mkEChart('chartTATPipeline',{tooltip:Object.assign({},ECT,{trigger:'axis',axisPointer:{type:'shadow'}}),legend:{bottom:0,itemWidth:8,itemHeight:8,textStyle:{color:'#475569',fontSize:10}},grid:{left:92,right:28,top:14,bottom:34},xAxis:Object.assign({},ECY_V,{axisLabel:{color:'#94A3B8',formatter:'{value}d'}}),yAxis:Object.assign({},ECX,{type:'category',data:STAGES.map(function(s){return s.label;}).reverse()}),series:[{name:state.pipelineView==='max'?'Worst case days':'Average days',type:'bar',data:values.slice().reverse().map(function(v,i){var stage=STAGES.slice().reverse()[i];return{value:v,itemStyle:{color:v>stage.sla?P.redA+'0.82)':stage.color,borderRadius:[0,5,5,0]}};}),label:{show:true,position:'right',formatter:'{c}d',color:'#475569',fontSize:10}},{name:'TAT limit',type:'scatter',symbolSize:9,data:STAGES.map(function(s){return s.sla;}).reverse(),itemStyle:{color:'#475569'}}]});}
+  function renderTrend(){var byMonth=groupBy(state.filtered,'month'),avgDays=MONTHS.map(function(m){return Math.round(avg(byMonth[m]||[],'total'));}),delayedValue=MONTHS.map(function(m){return sum((byMonth[m]||[]).filter(function(r){return r.total>SLA.total;}),'delayedValue');});mkEChart('chartTATTrend',{tooltip:Object.assign({},ECT,{trigger:'axis'}),legend:{bottom:0,itemWidth:8,itemHeight:8,textStyle:{color:'#475569',fontSize:10}},grid:{left:42,right:44,top:18,bottom:38},xAxis:Object.assign({},ECX,{data:MS}),yAxis:[Object.assign({},ECY_V,{name:'Days',axisLabel:{color:'#94A3B8',formatter:'{value}d'}}),Object.assign({},ECY_V,{name:'Value',axisLabel:{color:'#94A3B8',formatter:function(v){return fmtS(v);}}})],series:[{name:'Avg cycle',type:'line',smooth:true,data:avgDays,symbolSize:5,lineStyle:{color:P.teal,width:2.6},itemStyle:{color:P.teal},areaStyle:{color:P.tealA+'0.08)'}},{name:'Delayed value',type:'bar',yAxisIndex:1,data:delayedValue,itemStyle:{color:P.redA+'0.32)',borderRadius:[4,4,0,0]},barMaxWidth:20}]});}
+  function renderDeptTAT(){var key=state.deptView==='total'?'total':'prApproval',grouped=groupBy(state.filtered,'dept'),rows=Object.keys(grouped).map(function(k){return{name:shortDept(k),avg:Math.round(avg(grouped[k],key))};}).sort(function(a,b){return b.avg-a.avg;}).slice(0,10).reverse();mkEChart('chartDeptTAT',{tooltip:Object.assign({},ECT,{trigger:'axis'}),grid:{left:82,right:54,top:16,bottom:24},xAxis:Object.assign({},ECY_V,{axisLabel:{color:'#94A3B8',formatter:'{value}d'}}),yAxis:Object.assign({},ECX,{type:'category',data:rows.map(function(r){return r.name;})}),series:[{name:state.deptView==='total'?'Total cycle':'Approval TAT',type:'bar',data:rows.map(function(r){return{value:r.avg,itemStyle:{color:r.avg>(state.deptView==='total'?SLA.total:SLA.prApproval)?P.redA+'0.78)':P.amberA+'0.72)',borderRadius:[0,5,5,0]}};}),label:{show:true,position:'right',formatter:'{c}d',color:'#475569',fontSize:10}}]});}
+  function renderVendorTAT(){var grouped=groupBy(state.filtered,'vendor'),rows=Object.keys(grouped).map(function(k){var delayed=grouped[k].filter(function(r){return r.total>SLA.total;});return{name:k,avg:Math.round(avg(grouped[k],'quoteApproval')+avg(grouped[k],'invoiceApproval')),value:sum(delayed,'delayedValue'),breach:pct(delayed.length,grouped[k].length)};}).sort(function(a,b){return b.value-a.value||b.avg-a.avg;}).slice(0,10).reverse();mkEChart('chartVendorTAT',{tooltip:Object.assign({},ECT,{trigger:'axis'}),grid:{left:126,right:58,top:16,bottom:24},xAxis:Object.assign({},ECY_V,{axisLabel:{color:'#94A3B8',formatter:'{value}d'}}),yAxis:Object.assign({},ECX,{type:'category',data:rows.map(function(r){return r.name;}),axisLabel:{color:'#475569',fontSize:10,overflow:'truncate',width:112}}),series:[{name:'Delivery TAT',type:'bar',data:rows.map(function(r){return{value:r.avg,itemStyle:{color:r.breach>30?P.redA+'0.78)':P.blueA+'0.74)',borderRadius:[0,5,5,0]}};}),label:{show:true,position:'right',formatter:function(p){return p.value+'d';},color:'#475569',fontSize:10}}]});}
+  function renderDist(){var buckets=[{name:'0-15d',min:0,max:15,color:P.green},{name:'16-30d',min:16,max:30,color:P.amberA+'0.78)'},{name:'31-45d',min:31,max:45,color:P.orangeA+'0.78)'},{name:'46d+',min:46,max:Infinity,color:P.redA+'0.82)'}],totalCount=state.filtered.length||1,data=buckets.map(function(b){var rows=state.filtered.filter(function(r){return r.total>=b.min&&r.total<=b.max;}),value=state.distView==='percent'?pct(rows.length,totalCount):state.distView==='value'?sum(rows,'delayedValue'):rows.length;return{name:b.name,value:value,itemStyle:{color:b.color}};});mkEChart('chartTATDist',{tooltip:Object.assign({},ECT,{trigger:'item',formatter:function(p){return p.name+': '+(state.distView==='value'?fmt(p.value):p.value+(state.distView==='percent'?'%':' POs'));}}),grid:{left:42,right:16,top:18,bottom:28},xAxis:Object.assign({},ECX,{data:buckets.map(function(b){return b.name;})}),yAxis:Object.assign({},ECY_V,{axisLabel:{color:'#94A3B8',formatter:state.distView==='value'?function(v){return fmtS(v);}:'{value}'}}),series:[{type:'bar',data:data,barMaxWidth:48,label:{show:true,position:'top',formatter:function(p){return state.distView==='value'?fmtS(p.value):p.value+(state.distView==='percent'?'%':'');},color:'#475569',fontSize:10}}]});}
+  function renderCashExposure(){var allByEntity=groupBy(state.filtered,'entity'),names=Object.keys(allByEntity).map(function(e){var delayed=allByEntity[e].filter(function(r){return r.total>SLA.total;});return{name:e,delayedValue:sum(delayed,'delayedValue'),breach:pct(delayed.length,allByEntity[e].length)};}).sort(function(a,b){return b.delayedValue-a.delayedValue;});mkEChart('chartTATCash',{tooltip:Object.assign({},ECT,{trigger:'axis'}),legend:{bottom:0,itemWidth:8,itemHeight:8,textStyle:{color:'#475569',fontSize:10}},grid:{left:48,right:42,top:18,bottom:42},xAxis:Object.assign({},ECX,{data:names.map(function(r){return shortEnt(r.name);})}),yAxis:[Object.assign({},ECY_V,{axisLabel:{color:'#94A3B8',formatter:function(v){return fmtS(v);}}}),Object.assign({},ECY_V,{axisLabel:{color:'#94A3B8',formatter:'{value}%'}})],series:[{name:'Delayed value',type:'bar',data:names.map(function(r){return r.delayedValue;}),itemStyle:{color:P.redA+'0.38)',borderRadius:[4,4,0,0]},barMaxWidth:28},{name:'Breach rate',type:'line',yAxisIndex:1,data:names.map(function(r){return r.breach;}),symbolSize:6,lineStyle:{color:P.blue,width:2.4},itemStyle:{color:P.blue}}]});}
+  function renderTable(){var recs=state.filtered.slice();if(state.filter==='critical')recs=recs.filter(function(r){return r.total>SLA.total;});if(state.filter==='delayed')recs=recs.filter(function(r){return r.total>15&&r.total<=SLA.total;});if(state.filter==='highvalue'){var threshold=avg(state.filtered,'value');recs=recs.filter(function(r){return r.value>=threshold;});}recs.sort(function(a,b){return b.delayedValue-a.delayedValue||b.total-a.total;});pgSet('tat-dt',recs.map(function(r){return '<tr onclick="openRecord(\'PO:'+r.id+'\',\'TAT Analysis\')"><td class="tbl-id">'+r.id+'</td><td>'+shortEnt(r.entity)+'</td><td>'+shortDept(r.dept)+'</td><td>'+r.vendor+'</td><td class="num">'+fmt(r.value)+'</td><td class="num">'+r.prApproval+'d</td><td class="num">'+r.quoteApproval+'d</td><td class="num">'+r.poApproval+'d</td><td class="num">'+r.invoiceApproval+'d</td><td class="num" style="font-weight:bold;color:'+(r.total>SLA.total?P.red:r.total>15?P.amber:P.teal)+'">'+r.total+'d</td><td>'+r.bottleneck+'</td><td>'+riskBadge(r.status)+'</td></tr>';}));pgRender('tat-dt','tat-cnt','tat-pg');}
+  function renderAllParts(){renderKPIs();renderPipeline();renderTrend();renderDeptTAT();renderVendorTAT();renderDist();renderCashExposure();renderTable();}
+  return{render:function(){if(!document.getElementById('pTAT'))return;processData();renderAllParts();},setFilter:function(f,btn){state.filter=f;document.querySelectorAll('[id^="tf-"]').forEach(function(b){b.classList.remove('on');});if(btn)btn.classList.add('on');renderTable();},setPipelineView:function(view,btn){state.pipelineView=view;if(btn&&btn.parentNode)btn.parentNode.querySelectorAll('.segbtn').forEach(function(b){b.classList.remove('on');});if(btn)btn.classList.add('on');renderPipeline();},setDeptView:function(view,btn){state.deptView=view;if(btn&&btn.parentNode)btn.parentNode.querySelectorAll('.segbtn').forEach(function(b){b.classList.remove('on');});if(btn)btn.classList.add('on');renderDeptTAT();},setDistView:function(view,btn){state.distView=view;if(btn&&btn.parentNode)btn.parentNode.querySelectorAll('.ctgl').forEach(function(b){b.classList.remove('on');});if(btn)btn.classList.add('on');renderDist();},analyze:function(topic){var m=state.metrics||{},message=topic==='vendors'?'Vendor TAT focus: prioritize vendors linked to '+fmt(m.delayedValue||0)+' delayed PO value.':topic==='outliers'?'Critical TAT focus: review '+(m.criticalCount||0)+' POs above '+SLA.total+' days in Pay-Ally.':'Approval stage focus: biggest TAT driver is '+(m.bottleneck?m.bottleneck.label:'the longest approval stage')+'.';setText('tat-action',message);}};
+})();
+function renderTAT(){TAT.render();}
+function filterTAT(f,btn){TAT.setFilter(f,btn);}
+function setPipelineView(view,btn){TAT.setPipelineView(view,btn);}
+function setDeptTATView(view,btn){TAT.setDeptView(view,btn);}
+function setDistView(view,btn){TAT.setDistView(view,btn);}
+function analyzeTAT(topic){TAT.analyze(topic);}
+
 // TAB SWITCH
 // ══════════════════════════════════════
 function switchTab(i,el){
@@ -2899,7 +3130,7 @@ function switchTab(i,el){
 // ══════════════════════════════════════
 // RENDER ALL
 // ══════════════════════════════════════
-function renderAll(){renderSpend();renderPurch();renderAP();}
+function renderAll(){renderSpend();renderPurch();renderAP();renderTAT();}
 
 // ══════════════════════════════════════
 // INIT — handles both inline & JSON mode
@@ -2932,4 +3163,3 @@ window.addEventListener('load',function(){
 </script>
 </body>
 </html>
-
